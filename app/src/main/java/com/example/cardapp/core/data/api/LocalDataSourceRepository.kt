@@ -1,4 +1,4 @@
-package com.example.cardapp.core.domain.api
+package com.example.cardapp.core.data.api
 
 import com.example.cardapp.core.domain.model.CardInf
 import kotlinx.coroutines.flow.Flow

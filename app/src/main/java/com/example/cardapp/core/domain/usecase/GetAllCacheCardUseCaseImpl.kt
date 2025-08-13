@@ -1,7 +1,7 @@
 package com.example.cardapp.core.domain.usecase
 
 import com.example.cardapp.core.domain.api.GetAllCacheCardUseCase
-import com.example.cardapp.core.domain.api.LocalDataSourceRepository
+import com.example.cardapp.core.data.api.LocalDataSourceRepository
 import com.example.cardapp.core.domain.model.CardInf
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

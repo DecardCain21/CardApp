@@ -6,8 +6,8 @@ import com.example.cardapp.core.data.local.LocalDataSourseImpl
 import com.example.cardapp.core.data.local.dao.CardInfHistoryDao
 import com.example.cardapp.core.data.local.db.AppDatabase
 import com.example.cardapp.core.data.repository.LocalDataSourceRepositoryImpl
-import com.example.cardapp.core.domain.api.LocalDataSource
-import com.example.cardapp.core.domain.api.LocalDataSourceRepository
+import com.example.cardapp.core.data.api.LocalDataSource
+import com.example.cardapp.core.data.api.LocalDataSourceRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

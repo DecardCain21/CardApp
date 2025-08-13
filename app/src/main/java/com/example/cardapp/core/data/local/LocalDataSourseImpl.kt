@@ -3,7 +3,7 @@ package com.example.cardapp.core.data.local
 import com.example.cardapp.core.data.convertor.toCardInf
 import com.example.cardapp.core.data.convertor.toCardInfEntity
 import com.example.cardapp.core.data.local.dao.CardInfHistoryDao
-import com.example.cardapp.core.domain.api.LocalDataSource
+import com.example.cardapp.core.data.api.LocalDataSource
 import com.example.cardapp.core.domain.model.CardInf
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

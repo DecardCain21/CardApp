@@ -3,7 +3,7 @@ package com.example.cardapp.core.data.repository
 import com.example.cardapp.core.data.convertor.toCardInf
 import com.example.cardapp.core.data.network.client.CardInfNetworkClient
 import com.example.cardapp.core.domain.api.CardInfRepository
-import com.example.cardapp.core.domain.api.LocalDataSource
+import com.example.cardapp.core.data.api.LocalDataSource
 import com.example.cardapp.core.domain.model.CardInf
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
