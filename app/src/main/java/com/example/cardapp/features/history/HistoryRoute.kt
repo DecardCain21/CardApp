@@ -24,7 +24,6 @@ public fun HistoryRoute(
             )
         },
         onBack = onBack,
-        /*navController = findNavController()*/
     )
 
 }

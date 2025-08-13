@@ -63,13 +63,11 @@ import com.example.cardapp.features.history.state.HistoryScreenUiState
 import com.example.cardapp.ui.theme.LightGrey
 
 @SuppressLint("ContextCastToActivity")
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 public fun HistoryScreen(
     modifier: Modifier = Modifier,
     uiState: HistoryScreenUiState,
     onDeleteCardInfLongClick: (CardInf) -> Unit,
-    /*navController: NavController,*/
     onBack: () -> Unit
 ) {
     Scaffold(
@@ -77,10 +75,10 @@ public fun HistoryScreen(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .statusBarsPadding() // чтобы не залезало под статус бар
+                    .statusBarsPadding()
             ) {
                 Row(
-                    modifier = Modifier.fillMaxWidth().background(LightGrey),
+                    modifier = Modifier.fillMaxWidth().height(60.dp).background(LightGrey),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     IconButton(onClick = onBack) {
