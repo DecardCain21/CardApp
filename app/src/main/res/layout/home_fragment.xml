@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.home.HomeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingStart="@dimen/mark_20dp"
+        android:background="@color/light_grey"
+        android:layout_marginTop="@dimen/mark_40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/home_tittle"
+        app:titleTextAppearance="@style/ToolbarTextStyle">
+        <ImageView
+            android:id="@+id/iv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mark_20dp"
+            android:layout_marginEnd="@dimen/mark_8dp"
+            android:layout_gravity="end"
+            android:padding="@dimen/mark_12dp"
+            android:src="@drawable/outline_history_24"
+            app:layout_constraintBottom_toBottomOf="@+id/tb_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tb_header" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mark_20dp"
+        android:layout_marginTop="@dimen/mark_20dp"
+        android:layout_marginEnd="@dimen/mark_20dp"
+        android:background="@drawable/bg_search_edittext"
+        android:elevation="@dimen/mark_1dp"
+        android:hint="Введите первые 6-8 цифр номера карты (BIN/IIN)"
+        android:inputType="text"
+        android:padding="@dimen/mark_20dp"
+        android:paddingStart="@dimen/mark_20dp"
+        android:paddingEnd="@dimen/mark_48dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_header" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_vacancies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mark_10dp"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/mark_10dp"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search"
+        tools:itemCount="0"
+        tools:listitem="@layout/card_item" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@android:color/darker_gray"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_search">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="8dp" />
+
+            <TextView
+                android:id="@+id/card_tittle"
+                style="@style/TextStyleMedium22"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                app:layout_constraintEnd_toEndOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Card №1" />
+
+            <TextView
+                android:id="@+id/tv_bin"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/bin"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/card_tittle"
+                tools:text="BIN" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_bin"
+                tools:text="Type" />
+
+            <TextView
+                android:id="@+id/tv_scheme"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/scheme"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_type"
+                tools:text="Scheme" />
+
+            <TextView
+                android:id="@+id/tv_bin_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/card_tittle"
+                tools:text="12345" />
+
+            <TextView
+                android:id="@+id/tv_type_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_bin"
+                tools:text="debit" />
+
+            <TextView
+                android:id="@+id/tv_scheme_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_type"
+                tools:text="mir" />
+
+            <TextView
+                android:id="@+id/tv_brand"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/brand"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_scheme"
+                tools:text="@string/brand" />
+
+            <TextView
+                android:id="@+id/tv_brand_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_scheme"
+                tools:text="brand value" />
+
+            <TextView
+                android:id="@+id/tv_prepaid"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/prepaid"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_brand"
+                tools:text="@string/prepaid" />
+
+            <TextView
+                android:id="@+id/tv_prepaid_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_brand"
+                tools:text="prepaid value" />
+
+            <TextView
+                android:id="@+id/tv_country_numeric"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/country_numeric"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_prepaid"
+                tools:text="@string/country_numeric" />
+
+            <TextView
+                android:id="@+id/tv_country_numeric_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_prepaid"
+                tools:text="country numeric value" />
+
+            <TextView
+                android:id="@+id/country_info_title"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/country_info_title"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_numeric"
+                tools:text="@string/country_info_title" />
+
+            <TextView
+                android:id="@+id/country_info_title_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_numeric"
+                tools:text="country_info_title_value" />
+
+            <TextView
+                android:id="@+id/tv_country_name"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/country_name"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/country_info_title"
+                tools:text="@string/country_name" />
+
+            <TextView
+                android:id="@+id/tv_country_name_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/country_info_title"
+                tools:text="country name value" />
+
+            <TextView
+                android:id="@+id/tv_country_emoji"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/country_emoji"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_name"
+                tools:text="@string/country_emoji" />
+
+            <TextView
+                android:id="@+id/tv_country_emoji_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_name"
+                tools:text="country emoji value" />
+
+            <TextView
+                android:id="@+id/tv_country_currency"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/currency"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_emoji"
+                tools:text="@string/currency" />
+
+            <TextView
+                android:id="@+id/tv_country_currency_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_emoji"
+                tools:text="currency value" />
+
+            <TextView
+                android:id="@+id/bank_info_title"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/bank_info_title"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_currency"
+                tools:text="@string/bank_info_title" />
+
+            <TextView
+                android:id="@+id/bank_info_title_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_currency"
+                tools:text="bank_info_title_value" />
+
+            <TextView
+                android:id="@+id/bank_name"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/bank_name"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bank_info_title"
+                tools:text="@string/bank_name" />
+
+            <TextView
+                android:id="@+id/bank_name_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bank_info_title"
+                tools:text="bank_name_value" />
+
+            <TextView
+                android:id="@+id/bank_url"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/bank_url"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bank_name"
+                tools:text="@string/bank_url" />
+
+            <TextView
+                android:id="@+id/bank_url_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bank_name"
+                tools:text="bank_url_value" />
+
+            <TextView
+                android:id="@+id/bank_phone"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/bank_phone"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bank_url"
+                tools:text="@string/bank_phone" />
+
+            <TextView
+                android:id="@+id/bank_phone_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bank_url"
+                tools:text="bankPhone_value" />
+
+            <TextView
+                android:id="@+id/bank_city"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/bank_city"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bank_phone"
+                tools:text="@string/bank_city" />
+
+            <TextView
+                android:id="@+id/bank_city_value"
+                style="@style/TextStyleRegular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                app:layout_constraintEnd_toStartOf="@id/right_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bank_phone"
+                tools:text="bank_city_value" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

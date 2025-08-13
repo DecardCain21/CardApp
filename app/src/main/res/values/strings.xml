@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">CardApp</string>
+    <string name="home_tittle">Главная страница</string>
+
+    <!-- Card Information -->
+    <string name="bin">BIN</string>
+    <string name="card_info_title">Card Information</string>
+    <string name="number_length">Number Length</string>
+    <string name="luhn_check">Luhn Check</string>
+    <string name="scheme">Scheme</string>
+    <string name="type">Type</string>
+    <string name="brand">Brand</string>
+    <string name="prepaid">Prepaid</string>
+
+    <!-- Country Information -->
+    <string name="country_info_title">Country Information</string>
+    <string name="country_numeric">Country Numeric</string>
+    <string name="country_code">Country Code</string>
+    <string name="country_name">Country Name</string>
+    <string name="country_emoji">Country Emoji</string>
+    <string name="currency">Currency</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+
+    <!-- Bank Information -->
+    <string name="bank_info_title">Bank Information</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="bank_url">Bank URL</string>
+    <string name="bank_phone">Bank Phone</string>
+    <string name="bank_city">Bank City</string>
+
+    <!-- Other -->
+    <string name="update">Обновить</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="enter_the_bin_of_the_card">Введите BIN карты…</string>
+    <string name="start_information">Введите BIN (первые 6–8 цифр номера карты),
+        чтобы узнать информацию о банке, стране выпуска и типе карты</string>
+    <string name="collapse">Свернуть</string>
+    <string name="expand">Развернуть</string>
+    <string name="history_is_empty">История запросов пуста</string>
+    <string name="clear_text">Clear text</string>
+    <string name="server_error">Ошибка сервера</string>
+    <string name="enter_the_first_6_8_digits">Введите первые 6–8 цифр номера карты</string>
+</resources>
