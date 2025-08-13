@@ -1,12 +1,12 @@
-package com.example.cardapp.features.details
+package com.example.cardapp.features.history
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cardapp.core.domain.api.DeleteCardInfUseCase
 import com.example.cardapp.core.domain.api.GetAllCacheCardUseCase
 import com.example.cardapp.core.domain.model.CardInf
-import com.example.cardapp.features.details.state.HistoryScreenUiEvent
-import com.example.cardapp.features.details.state.HistoryScreenUiState
+import com.example.cardapp.features.history.state.HistoryScreenUiEvent
+import com.example.cardapp.features.history.state.HistoryScreenUiState
 import com.example.cardapp.util.debounce
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted

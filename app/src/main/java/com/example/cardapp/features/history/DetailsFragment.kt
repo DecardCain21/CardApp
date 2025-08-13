@@ -1,4 +1,4 @@
-package com.example.cardapp.features.details
+package com.example.cardapp.features.history
 
 import android.os.Bundle
 import android.view.LayoutInflater

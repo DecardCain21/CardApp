@@ -1,11 +1,11 @@
-package com.example.cardapp.features.details
+package com.example.cardapp.features.history
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.cardapp.features.details.state.HistoryScreenUiEvent
+import com.example.cardapp.features.history.state.HistoryScreenUiEvent
 
 @Composable
 public fun HistoryRoute(

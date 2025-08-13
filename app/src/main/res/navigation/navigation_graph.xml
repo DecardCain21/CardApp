@@ -23,7 +23,7 @@
     </composable>-->
     <fragment
         android:id="@+id/detailsComposable"
-        android:name="com.example.cardapp.features.details.DetailsFragment"
+        android:name="com.example.cardapp.features.history.DetailsFragment"
         android:label="Details">
         <argument
             android:name="itemId"

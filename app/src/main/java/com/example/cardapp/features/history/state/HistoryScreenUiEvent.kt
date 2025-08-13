@@ -1,4 +1,4 @@
-package com.example.cardapp.features.details.state
+package com.example.cardapp.features.history.state
 
 import com.example.cardapp.core.domain.model.CardInf
 

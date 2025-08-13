@@ -1,7 +1,11 @@
 package com.example.cardapp.main
 
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.core.view.WindowCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.example.cardapp.R
 import com.example.cardapp.databinding.MainActivityBinding
