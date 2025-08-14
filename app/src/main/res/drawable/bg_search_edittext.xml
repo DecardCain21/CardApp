@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Убираем solid (заливку) и добавляем stroke (обводку) -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/light_grey" />  <!-- Укажите ваш серый цвет -->
+
+    <!-- Сохраняем скругленные углы -->
+    <corners android:radius="@dimen/mark_12dp"/>
+
+    <!-- Прозрачная заливка (если нужно) -->
+    <solid android:color="@android:color/transparent"/>
+</shape>

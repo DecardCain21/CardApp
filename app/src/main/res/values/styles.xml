@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ToolbarTextStyle" parent="@style/Base.TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/text_mark_22sp</item>
+        <item name="fontFamily">@font/ys_display_medium</item>
+    </style>
+
+    <style name="TextStyleMedium22">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_mark_22sp</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextStyleRegular16">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_mark_16sp</item>
+        <item name="android:fontFamily">@font/ys_display_regular</item>
+        <item name="android:layout_marginTop">@dimen/mark_6dp</item>
+    </style>
+
+</resources>
