@@ -190,10 +190,12 @@ public fun ExpandableCard(
                 titleName = "Card №$cardName"
             )
             InfoRow(labelRes = R.string.bin, value = card.bin)
-            CardInfoSection(card = card)
+            InfoRow(labelRes = R.string.type, value = card.type)
+            InfoRow(labelRes = R.string.scheme, value = card.scheme)
 
             AnimatedVisibility(visible = expanded) {
                 Column(modifier = Modifier.padding(top = 8.dp)) {
+                    CardInfoSection(card = card)
                     SectionTitle(
                         modifier = Modifier.align(Alignment.CenterHorizontally),
                         titleRes = R.string.country_info_title

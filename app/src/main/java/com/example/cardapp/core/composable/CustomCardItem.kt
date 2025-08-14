@@ -36,8 +36,8 @@ public fun CardInfoSection(card: CardInf) {
         else
             stringResource(id = R.string.no)
     )
-    InfoRow(labelRes = R.string.scheme, value = card.scheme)
-    InfoRow(labelRes = R.string.type, value = card.type)
+    /*InfoRow(labelRes = R.string.scheme, value = card.scheme)*/
+    /*InfoRow(labelRes = R.string.type, value = card.type)*/
     InfoRow(labelRes = R.string.brand, value = card.brand)
     InfoRow(
         labelRes = R.string.prepaid,
