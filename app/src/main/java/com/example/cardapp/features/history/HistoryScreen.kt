@@ -143,12 +143,13 @@ public fun HistoryScreenContent(
     cardList: List<CardInf>,
     onDeleteCardInfLongClick: (CardInf) -> Unit,
 ) {
+    val result = cardList.reversed()
     LazyColumn(
         modifier = modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        itemsIndexed(cardList) { index,card ->
+        itemsIndexed(result) { index,card ->
             ExpandableCard(
                 cardName = index+1,
                 card = card,

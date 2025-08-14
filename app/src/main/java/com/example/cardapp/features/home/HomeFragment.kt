@@ -1,9 +1,12 @@
 package com.example.cardapp.features.home
 
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import androidx.core.os.bundleOf
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
@@ -66,8 +69,21 @@ public class HomeFragment : BindingFragment<HomeFragmentBinding>() {
         }
     }
 
-    private fun configureSearchInput() = binding.etSearch.doOnTextChanged { text, _, _, _ ->
-        viewModel.searchDebounce(text?.toString().orEmpty())
+    private fun configureSearchInput() {
+        binding.etSearch.doOnTextChanged { text, _, _, _ ->
+            viewModel.searchDebounce(text?.toString().orEmpty())
+        }
+        binding.etSearch.setOnEditorActionListener{_,actionId,_->
+            if(actionId==EditorInfo.IME_ACTION_DONE||actionId == EditorInfo.IME_ACTION_SEARCH||actionId==EditorInfo.IME_ACTION_GO){
+                viewModel.searchDebounce(binding.etSearch.text.toString())
+                val inputMethodManager =
+                    requireContext().getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
+                inputMethodManager?.hideSoftInputFromWindow(binding.etSearch.windowToken, 0)
+                true
+            }else{
+                false
+            }
+        }
     }
 
     private fun configureHistoryButton() {
